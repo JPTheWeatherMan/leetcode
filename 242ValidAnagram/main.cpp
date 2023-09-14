@@ -1,11 +1,15 @@
+#include <unordered_map>
+#include <iostream>
+#include <string>
+
 class Solution {
 public:
-    bool isAnagram(string s, string t) {
+    bool isAnagram(std::string s, std::string t) {
         if(s.size() != t.size()) 
             return false;
         
-        unordered_map<char,int> smap;
-        unordered_map<char,int> tmap;
+        std::unordered_map<char,int> smap;
+        std::unordered_map<char,int> tmap;
         
         for(int i = 0; i < s.size(); i++){
             smap[s[i]]++;
@@ -19,4 +23,18 @@ public:
         
         return true;
     }
+};
+
+int main(){
+    Solution sln;
+    std::string isAnagram1 = "racecar";
+    std::string isAnagram2 = "acercra";
+    std::string isNotAnagram1 = "notananagram";
+    std::string isNotAnagram2 = "definitelynot";
+
+    std::cout << "Testing against an anagram results in a value of " << sln.isAnagram(isAnagram1, isAnagram2) << std::endl;
+
+    std::cout << "Testing against a non-anagram results in a value of " << sln.isAnagram(isNotAnagram1, isNotAnagram2) << std::endl;
+
+    return 0;
 };
