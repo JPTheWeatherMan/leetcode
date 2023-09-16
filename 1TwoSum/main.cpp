@@ -27,7 +27,6 @@ void outVector(std::vector<int> a){
         std::cout << e << ", ";
     }
     std::cout << "\n";
-    return;
 }
 
 int main(){

@@ -33,3 +33,5 @@
 
 .vscode
 .vs
+cmake-build-debug
+main.exe
